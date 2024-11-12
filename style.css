@@ -1,6 +1,5 @@
 body {
   background-color: lightsalmon;
-  bo
 }
 h1 {
   text-align: center;
@@ -15,17 +14,27 @@ img {
   max-width: 100%;
   height: auto;
   border: 10px solid black;
+  margin: 50px 0 0 0;
   /* border-color: blue; */
-  
+}
+
+a {
+  display: flex;
+  background-color: rgb(244, 195, 195);
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  color: black;
+  width: 100px;
+  padding: 1px 1px;
+  margin: 1px 1px;
+  text-decoration: none;
 }
 .one {
-  text-align: center;
-  justify-content: center;
   display: flex;
-  #btn {
-    background-color: black;
-    color: aliceblue;
-    padding: 10px;
-    margin: 30px;
-  }
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 90px 0 0 0;
 }
