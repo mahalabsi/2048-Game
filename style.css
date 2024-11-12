@@ -1,0 +1,31 @@
+body {
+  background-color: lightsalmon;
+  bo
+}
+h1 {
+  text-align: center;
+  color: darkslategray;
+}
+h2 {
+  text-align: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 10px solid black;
+  /* border-color: blue; */
+  
+}
+.one {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  #btn {
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    margin: 30px;
+  }
+}
