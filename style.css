@@ -107,7 +107,14 @@ a {
   color: black;
   background-color: #8ac926;
 }
-
+.t4096 {
+  color: white;
+  background-color: #9a0f00;
+}
+.t8192 {
+  color: white;
+  background-color: #9a0f00;
+}
 hr {
   width: 500px;
 }
