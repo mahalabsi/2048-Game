@@ -118,3 +118,28 @@ a {
 hr {
   width: 500px;
 }
+
+#gameOver {
+  color: #4f000b;
+  font-size: xx-large;
+  font-family: fantasy;
+}
+
+#doAgain {
+  display: flex;
+  background-color: #e0b1cb;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  color: black;
+  width: 400px;
+  padding: 1px 1px;
+  margin: 0;
+  text-decoration: none;
+}
+
+.restart {
+  display: flex;
+  justify-content: center;
+}
