@@ -123,6 +123,7 @@ hr {
   color: #4f000b;
   font-size: xx-large;
   font-family: fantasy;
+  margin: 10px;
 }
 
 #doAgain {
@@ -142,4 +143,5 @@ hr {
 .restart {
   display: flex;
   justify-content: center;
+  margin: 30px;
 }
