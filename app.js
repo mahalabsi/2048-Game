@@ -3,7 +3,6 @@ let rows = 4
 let columns = 4
 const boardElement = document.getElementById('board')
 const gameOver = document.querySelector('#gameOver')
-// const updateScore = document.querySelector('#score')
 let board = [
   [2, 0, 2, 0],
   [0, 0, 0, 0],
@@ -56,7 +55,7 @@ document.addEventListener('keyup', (ev) => {
 
   updateScore()
 
-  checkGameOver() // Check if the game is over after each move
+  checkGameOver()
 })
 
 const slideLeft = () => {
@@ -117,21 +116,18 @@ const updateBoard = () => {
 }
 
 const slide = (row) => {
-  // Remove zeros from the row
   const filteredRow = row.filter((num) => num !== 0)
 
-  // Merge adjacent equal numbers
   const mergedRow = []
   for (let i = 0; i < filteredRow.length; i++) {
     if (filteredRow[i] === filteredRow[i + 1]) {
       mergedRow.push(filteredRow[i] * 2)
-      i++ // Skip the next element
+      i++
     } else {
       mergedRow.push(filteredRow[i])
     }
   }
 
-  // Fill the rest of the row with zeros
   while (mergedRow.length < row.length) {
     mergedRow.push(0)
   }
@@ -140,7 +136,6 @@ const slide = (row) => {
 }
 
 const setTwo = () => {
-  // Find all empty cells
   const emptyCells = []
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
@@ -150,7 +145,6 @@ const setTwo = () => {
     }
   }
 
-  // If there are empty cells, randomly choose one to set to 2
   if (emptyCells.length > 0) {
     const { row, col } =
       emptyCells[Math.floor(Math.random() * emptyCells.length)]
@@ -166,34 +160,30 @@ const checkGameOver = () => {
 }
 
 const movesAvailable = () => {
-  // Check if there are any empty cells
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
       if (board[r][c] === 0) {
-        return true // If there is an empty cell, moves are available
+        return true
       }
     }
   }
 
-  // Check for possible merges horizontally
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns - 1; c++) {
       if (board[r][c] === board[r][c + 1]) {
-        return true // If there are adjacent equal numbers horizontally, moves are available
+        return true
       }
     }
   }
 
-  // Check for possible merges vertically
   for (let c = 0; c < columns; c++) {
     for (let r = 0; r < rows - 1; r++) {
       if (board[r][c] === board[r + 1][c]) {
-        return true // If there are adjacent equal numbers vertically, moves are available
+        return true
       }
     }
   }
 
-  // If no empty cells or possible merges found, no moves are available
   return false
 }
 
@@ -201,11 +191,9 @@ const gameOverMessage = () => {
   gameOver.style.display = 'block'
 }
 
-// //update the score
 const newScore = (mergedRow) => {
   let sum = 0
 
-  // Calculate the sum of the merged row
   mergedRow.forEach((tile) => {
     sum += tile
   })
@@ -217,14 +205,11 @@ const updateScore = () => {
   let oldScore = score
   let mergedSum = 0
 
-  // Calculate the sum of merged tiles by iterating over the board
   board.forEach((row) => {
     mergedSum += newScore(row)
   })
 
-  // Update the score based on the difference between merged sum and previous score
   score += mergedSum - oldScore
 
-  // Display the updated score
   document.getElementById('score').innerText = ` ${score}`
 }
