@@ -16,3 +16,15 @@ I used external links to use them as gif background for my game:
 - [background 2](https://i.pinimg.com/736x/1a/5c/86/1a5c8636b5147358f47f275e5d44a162.jpg)
 
 - [background 3](https://i.pinimg.com/originals/39/69/b4/3969b4033a5a5b2f7204876edae50ff4.gif)
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## Future Enhancement Ideas:
+
+1. I would like to add two players to play the game at the same time like some sort of a challenge.
+2. I want people to play it not only using the keypad but also by using touch screens.
+3. Another Idea to the challenges it would be great to put a timer to see who has the highest score.
