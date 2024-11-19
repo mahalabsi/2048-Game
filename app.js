@@ -213,3 +213,45 @@ const updateScore = () => {
 
   document.getElementById('score').innerText = ` ${score}`
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const originalLink = document.getElementById('original')
+  const studioLink = document.getElementById('Studio')
+  const nightLink = document.getElementById('Night')
+
+  const changeBackground = (imageUrl) => {
+    document.body.style.backgroundImage = `url('${imageUrl}')`
+    document.body.style.backgroundSize = 'cover'
+  }
+
+  const setTheme = (event) => {
+    event.preventDefault()
+    const themeUrl = event.target.getAttribute('href')
+
+    if (themeUrl) {
+      localStorage.setItem('selectedTheme', themeUrl)
+      changeBackground(themeUrl)
+    }
+  }
+
+  originalLink.addEventListener('click', setTheme)
+  studioLink.addEventListener('click', setTheme)
+  nightLink.addEventListener('click', setTheme)
+
+  const startLink = document.getElementById('start')
+  startLink.addEventListener('click', () => {
+    const selectedTheme = localStorage.getItem('selectedTheme')
+    if (selectedTheme) {
+      localStorage.setItem('nextPageTheme', selectedTheme)
+
+      const index2Body = window.opener.document.querySelector('body')
+      index2Body.style.backgroundImage = `url('${selectedTheme}')`
+      index2Body.style.backgroundSize = 'cover'
+    }
+  })
+})
+document.addEventListener('DOMContentLoaded', () => {
+  const nextPageTheme = localStorage.getItem('nextPageTheme')
+  document.body.style.backgroundImage = `url('${nextPageTheme}')`
+  document.body.style.backgroundSize = 'cover'
+})
